@@ -1,0 +1,27 @@
+:root {
+    /* Colores principales */
+    --primary-color: #1864dd;
+    --secondary-color: #ff9800;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+
+    /* Colores de estado */
+    --success-color: #4caf50;
+    --error-color: #f44336;
+    --warning-color: #ff9800;
+
+    /* Tipografía */
+    --font-family: 'Roboto', sans-serif;
+    --font-size-base: 16px;
+
+    /* Espaciado */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+
+    /* Color de texto */
+    --text-color-primary: #fff;
+
+    /* Color base */
+    --base-color: #008080;
+}
