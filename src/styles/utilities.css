@@ -33,6 +33,22 @@
     border-color: var(--primary-color);
 }
 
+/* Formulario Login */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+/* Formulario Register */
+.form-register {
+    width: 50%;
+}
+
+
 /* Botón Primary */
 
 .btn-primary {
@@ -95,4 +111,22 @@
 
 .btn-danger:active {
     background-color: #f07d6d;
+}
+
+
+/* Ocultar elemento segun width */
+@media screen and (max-width: 768px) {
+
+    .form-login {
+        width: 100%;
+    }
+
+    .form-register {
+        width: 0%;
+    }
+
+    .img-login {
+        display: none;
+    }
+
 }
