@@ -1,0 +1,65 @@
+.sidebar {
+    width: 12.5%;
+    height: 100%;
+    background-color: var(--base-color);
+    color: #fff;
+    z-index: 1;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    display: flex;
+    /* Para alinear ícono y texto horizontalmente */
+    align-items: center;
+    /* Centra ícono y texto verticalmente */
+    gap: 10px;
+    /* Espacio entre ícono y texto */
+}
+
+.sidebar a:hover {
+    background-color: #fff;
+    color: var(--base-color);
+}
+
+.sidebar a.active {
+    background-color: #fff;
+    color: var(--base-color);
+}
+
+/* Ocultar el texto y mostrar solo íconos en pantallas pequeñas */
+@media (max-width: 1016px) {
+    .sidebar {
+        width: 60px;
+        /* Ajustar el ancho para que sea más compacto */
+    }
+
+    .sidebar a {
+        justify-content: center;
+        /* Centrar los íconos horizontalmente */
+        gap: 0;
+        /* Sin espacio entre ícono y texto */
+    }
+
+    .sidebar a span {
+        display: none;
+        /* Ocultar el texto */
+    }
+
+    .sidebar h3,
+    .sidebar p {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidebar h3 {
+        display: none !important;
+    }
+}
