@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { showToast } from '../../context/ToastContext';
 
-
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 //Instancia sin token
 export const axiosPublic = axios.create({
@@ -30,5 +30,32 @@ axiosPrivate.interceptors.request.use(
     },
     (error) => {
         return Promise.reject(error);
+    }
+);
+
+axiosPublic.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.code === "ERR_NETWORK") {
+            showToast('Error de conexión', 'error');
+        } else {
+            const errorMessage = error.response?.data?.Message || 'Error en la solicitud';
+            showToast(errorMessage, 'error');
+        }
+        return Promise.resolve();
+    }
+);
+
+
+axiosPrivate.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.code === "ERR_NETWORK") {
+            showToast('Error de conexión', 'error');
+        } else {
+            const errorMessage = error.response?.data?.Message || 'Error en la solicitud';
+            showToast(errorMessage, 'error');
+        }
+        return Promise.resolve();
     }
 );
