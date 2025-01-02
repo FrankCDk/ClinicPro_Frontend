@@ -3,7 +3,8 @@ import { LoginRequest } from "../interfaces/Auth";
 
 export const loginService = async (credentials: LoginRequest) => {
 
-    const response = await axiosPublic.post('/auth/login', credentials);
-    return response.data;
+    return await axiosPublic.post('/auth/login', credentials)
+        .then(res => res.data)
+        .catch(() => null);
 
 }

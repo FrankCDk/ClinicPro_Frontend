@@ -33,6 +33,13 @@
     border-color: var(--primary-color);
 }
 
+form.form .error {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* Formulario Login */
 .form-login {
     display: flex;
@@ -111,6 +118,57 @@
 
 .btn-danger:active {
     background-color: #f07d6d;
+}
+
+/* Toastr personalizado */
+.toast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.5rem;
+    z-index: 1000;
+}
+
+.toast svg {
+    margin-right: 0.5rem;
+    margin-left: 0.2rem;
+}
+
+.toast p {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.toast button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.toast-success {
+    background-color: var(--success-color);
+    color: var(--text-color-primary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toast-warn {
+    background-color: var(--warning-color);
+    color: var(--text-color-primary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toast-error {
+    background-color: var(--error-color);
+    color: var(--text-color-primary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 

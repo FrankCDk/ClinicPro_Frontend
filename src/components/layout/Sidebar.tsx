@@ -1,12 +1,21 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../../styles/sidebar.css';
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaUserInjured } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { GiHospitalCross } from "react-icons/gi";
+import Cookies from 'js-cookie';
 
 export const Sidebar = () => {
+
+  const navigate = useNavigate();
+
+  const closeSession = () => {
+    Cookies.remove('AuthToken');
+    navigate('/login');
+  }
+
   return (
     <div className="sidebar">
       <div>
@@ -36,7 +45,7 @@ export const Sidebar = () => {
       </div>
 
       <div>
-        <NavLink to="/login" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <NavLink to="/" onClick={closeSession} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           <TbLogout />
           <span>Cerrar Sesión</span>
         </NavLink>
